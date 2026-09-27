@@ -20,12 +20,15 @@ export function Footer() {
             <Link href="tel:+4539561666">TLF: +45 39 56 16 66</Link>
             <address>Frederiksborgvej 202, 2400 København</address>
           </div>
-          <nav aria-label="Behandlinger" className="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2">
+          <nav aria-label="Sider" className="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2">
             {servicePages.map((page) => (
               <Link key={page.href} href={page.href} className="underline">
                 {page.title}
               </Link>
             ))}
+            <Link href="/medlemskab" className="underline">
+              Medlemskab
+            </Link>
           </nav>
         </div>
         <div className="font-bold flex flex-col items-center sm:items-end gap-2">

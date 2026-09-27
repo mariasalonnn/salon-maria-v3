@@ -89,6 +89,9 @@ export function DesktopNavigationMenu() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        <NavigationMenuItem className="hidden sm:block">
+          <Link href="/medlemskab">Medlemskab</Link>
+        </NavigationMenuItem>
         <NavigationMenuItem>
           <Button variant="text" asChild>
             <Link href="https://salon-maria.planway.com/">Book tid</Link>

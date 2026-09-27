@@ -22,6 +22,11 @@ export function Prices() {
           </h2>
           <p>Du kan betale med kort, kontant og MobilePay</p>
           <p>Studierabat / pensionist: -10%</p>
+          <p>
+            <Link href="/medlemskab" className="underline font-semibold">
+              Salon Maria Club – se medlemskab
+            </Link>
+          </p>
           <Button asChild variant="outline" className="border-black text-black">
             <Link href="https://salon-maria.planway.com/">Book tid</Link>
           </Button>

@@ -15,6 +15,12 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/medlemskab`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
     ...["/dameklip", "/boerneklip", "/herreklip", "/farve-og-balayage"].map((path) => ({
       url: `${baseUrl}${path}`,
       lastModified,

@@ -85,6 +85,9 @@ function MobileNavigationMenu({ setIsOpen }) {
       <Link onClick={() => setIsOpen(false)} href="/galleri">
         Galleri
       </Link>
+      <Link onClick={() => setIsOpen(false)} href="/medlemskab">
+        Medlemskab
+      </Link>
       <Button variant="text" asChild className="text-3xl after:bottom-[6px] py-0">
         <Link href="https://salon-maria.planway.com/">Book tid</Link>
       </Button>

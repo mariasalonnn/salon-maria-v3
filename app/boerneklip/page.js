@@ -24,7 +24,7 @@ export default function Boerneklip() {
       priceItems={childItems}
     >
       <p>
-        Vi er stolte af at have åbnet Københavns første børnefrisør for over 10 år siden. Salonen
+        Vi er stolte af at have åbnet Københavns første børnefrisør i over 10 år. Salonen
         er indrettet specielt til børn med inspiration fra engelske børnefrisører, og vi byder både
         børn og voksne velkommen i vores to forskellige lokaler.
       </p>

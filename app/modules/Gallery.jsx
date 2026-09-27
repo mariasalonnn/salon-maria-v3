@@ -1,5 +1,17 @@
 import Image from "next/image";
 
+const galleryAlts = [
+  "Glade børn i børnehjørnet hos Salon Maria i København",
+  "Dreng med krøllet hår efter klipning hos Salon Maria",
+  "Lille barn i bilstol klar til børneklip",
+  "Pige med crimpet hår, farvede striber og perler i håret",
+  "Frisør klipper pandehår på lille pige",
+  "Pige med langt rødt hår og farvede hårextensions",
+  "Dreng med kort fade og rødfarvet pigget top",
+  "Dreng i legetøjsbil i frisørstolen hos Salon Maria",
+  "Dreng med pigget frisure i orange og grøn farve",
+];
+
 export default function Gallery() {
   return (
     <section className="px-2 md:px-6 py-4 md:py-8">
@@ -15,6 +27,7 @@ export default function Gallery() {
                     <Image
                       key={i}
                       src={`/gallery/boerneklip${i + 1}.webp`}
+                      alt={galleryAlts[i]}
                       width={300}
                       height={300}
                       className="bg-[#eee] flex items-center justify-center object-cover w-full h-full rounded-md "

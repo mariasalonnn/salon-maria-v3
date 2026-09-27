@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Hours() {
   return (
-    <section className="bg-grey text-white px-4 md:px-6 py-10 lg:py-[100px]" id="prices">
+    <section className="bg-grey text-white px-4 md:px-6 py-10 lg:py-[100px]" id="aabningstider">
       <div className="flex flex-col lg:flex-row flex-wrap gap-10 max-w-screen-xl mx-auto">
         <div className="md:py-10 flex-1 flex flex-col gap-4 text-center items-center justify-center">
           <div className="text-lg md:text-xl">Velkommen</div>

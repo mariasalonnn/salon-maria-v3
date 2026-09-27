@@ -10,6 +10,7 @@ import { prices } from "../data/prices";
 import { useAccordionStore } from "../page";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { servicePages } from "../data/site";
 
 export function Prices() {
   return (
@@ -24,6 +25,14 @@ export function Prices() {
           <Button asChild variant="outline" className="border-black text-black">
             <Link href="https://salon-maria.planway.com/">Book tid</Link>
           </Button>
+          <div className="flex flex-col gap-1 pt-2">
+            <p className="font-semibold">Læs mere om:</p>
+            {servicePages.map((page) => (
+              <Link key={page.href} href={page.href} className="underline">
+                {page.title}
+              </Link>
+            ))}
+          </div>
         </div>
         <PriceList />
       </div>

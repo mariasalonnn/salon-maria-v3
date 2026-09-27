@@ -15,5 +15,11 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    ...["/boerneklip", "/herreklip", "/farve-og-balayage"].map((path) => ({
+      url: `${baseUrl}${path}`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    })),
   ];
 }

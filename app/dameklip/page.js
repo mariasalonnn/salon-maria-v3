@@ -13,7 +13,7 @@ export const metadata = pageMetadata({
 
 const womenItems = prices
   .find((category) => category.title === "Klip")
-  .items.filter((item) => item.name.includes("Dame"));
+  .items.filter((item) => item.name.toLowerCase().includes("dame"));
 
 export default function Dameklip() {
   return (

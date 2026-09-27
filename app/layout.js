@@ -5,13 +5,78 @@ import { Header } from "@/app/modules/Header";
 import { Footer } from "./modules/Footer";
 import Script from "next/script";
 
+const siteDescription =
+  "Salon Maria er en familievenlig frisør i København NV for børn og voksne – en bæredygtig frisøroplevelse med innovative klipninger og luksuriøs hårpleje.";
+
 export const metadata = {
   metadataBase: new URL('https://www.salonmaria.info/'),
-  title: "Salon Maria",
-  description: "Velkommen til Salon Maria - en bæredygtig, familievenlig frisøreoplevelse med innovative klipninger og luksuriøs hårpleje",
+  title: "Salon Maria | Frisør for børn og voksne i København NV",
+  description: siteDescription,
   favicon: "/favicon.ico",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
+    title: "Salon Maria | Frisør for børn og voksne i København NV",
+    description: siteDescription,
+    url: "/",
+    siteName: "Salon Maria",
+    locale: "da_DK",
+    type: "website",
     images: '/logo_square.webp',
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  name: "Salon Maria",
+  url: "https://www.salonmaria.info",
+  logo: "https://www.salonmaria.info/logo_square.webp",
+  image: "https://www.salonmaria.info/logo_square.webp",
+  telephone: "+4539561666",
+  priceRange: "90-2500 DKK",
+  currenciesAccepted: "DKK",
+  paymentAccepted: "Kort, kontant, MobilePay",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Frederiksborgvej 202",
+    postalCode: "2400",
+    addressLocality: "København NV",
+    addressCountry: "DK",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:30",
+      closes: "17:30",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "14:00",
+    },
+  ],
+  sameAs: [
+    "https://www.facebook.com/salonmaria.info",
+    "https://www.instagram.com/salonmaria.info/",
+  ],
+  potentialAction: {
+    "@type": "ReserveAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://salon-maria.planway.com/",
+      actionPlatform: [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform",
+      ],
+    },
+    result: {
+      "@type": "Reservation",
+      name: "Book tid",
+    },
   },
 };
 
@@ -19,9 +84,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="da">
       <Script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/927b04ae803e24da1af8530c/script.js"></Script>
       <body className="bg-grey">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         {children}
         <Footer />

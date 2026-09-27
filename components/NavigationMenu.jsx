@@ -80,6 +80,7 @@ export function DesktopNavigationMenu() {
                   <Image
                     key={i}
                     src={`/gallery/boerneklip${i + 1}.webp`}
+                    alt={`Børneklip fra Salon Maria, billede ${i + 1}`}
                     width={300}
                     height={300}
                     className="bg-[#eee] flex items-center justify-center rounded-md object-cover aspect-square "
@@ -87,6 +88,9 @@ export function DesktopNavigationMenu() {
                 ))}
             </ul>
           </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem className="hidden sm:block">
+          <Link href="/medlemskab">Medlemskab</Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Button variant="text" asChild>

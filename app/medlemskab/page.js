@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { bookingUrl, pageMetadata, phone } from "../data/site";
 
 const path = "/medlemskab";
+const membershipSignupUrl = "https://salon-maria.planway.com/widget/buy_membership";
 
 export const metadata = pageMetadata({
   path,
@@ -71,7 +72,12 @@ export default function Medlemskab() {
                   ))}
                 </ul>
                 <Button asChild className="w-full">
-                  <a href={`tel:${phone}`} aria-label={`Bliv medlem, ${membership.name}`}>
+                  <a
+                    href={membershipSignupUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Bliv medlem, ${membership.name}`}
+                  >
                     Bliv medlem
                   </a>
                 </Button>
@@ -79,7 +85,7 @@ export default function Medlemskab() {
             ))}
           </ul>
           <p className="text-base md:text-lg max-w-3xl">
-            Bliv medlem ved at ringe til os på{" "}
+            Bliv medlem online via vores bookingsystem, ring til os på{" "}
             <a href={`tel:${phone}`} className="underline font-semibold">
               39 56 16 66
             </a>{" "}

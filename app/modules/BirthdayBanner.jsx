@@ -23,6 +23,9 @@ export function BirthdayBanner() {
           <h2 id="boernefoedselsdag-banner" className="font-serif text-3xl font-bold leading-tight">
             Børnefødselsdag hjemme hos jer
           </h2>
+          <p className="font-serif text-base font-medium leading-snug md:text-lg">
+            En anderledes og særlig oplevelse – den bedste gave til jeres børn
+          </p>
           <p className="text-base leading-snug md:text-lg">
             Hår, makeup og neglelak til hele festen – vi kommer til jer!
           </p>

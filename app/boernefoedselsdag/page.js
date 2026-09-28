@@ -5,7 +5,7 @@ import { pageMetadata, phone } from "../data/site";
 const path = "/boernefoedselsdag";
 
 const description =
-  "Maria kommer hjem til børnefødselsdagen med festfrisure, makeup og neglelak. 3.995 kr. for 10 børn. Ring og book hos Salon Maria.";
+  "En anderledes og særlig oplevelse – den bedste gave til jeres børn. Maria kommer hjem med hår, makeup og neglelak. 3.995 kr. for 10 børn.";
 
 const shareAlt =
   "Børnefødselsdag hjemme hos jer – hår, makeup og neglelak, 3.995 kr. for 10 børn";
@@ -28,15 +28,20 @@ export default function Boernefoedselsdag() {
       path={path}
       hero={
         <div className="px-4 md:px-6 pt-8">
-          <div className="relative mx-auto aspect-[1280/720] w-full max-w-screen-xl overflow-hidden rounded-md">
-            <Image
-              src="/boernefoedselsdag-bg.webp"
-              alt="Børn med festfrisurer, tiara, glimmer og neglelak til en børnefødselsdag derhjemme"
-              fill
-              priority
-              sizes="(max-width: 1280px) 100vw, 1280px"
-              className="object-cover"
-            />
+          <div className="relative mx-auto w-full max-w-screen-xl overflow-hidden rounded-md">
+            <div className="relative aspect-[4/3] sm:aspect-video lg:aspect-[1280/720]">
+              <Image
+                src="/boernefoedselsdag-bg.webp"
+                alt="Børn med festfrisurer, tiara, glimmer og neglelak til en børnefødselsdag derhjemme"
+                fill
+                priority
+                sizes="(max-width: 1280px) 100vw, 1280px"
+                className="object-cover object-[78%_center] lg:object-center"
+              />
+            </div>
+            <p className="bg-[#FBF6F0] px-5 py-4 font-serif text-lg font-medium leading-snug text-[#6E3E3A] sm:px-6 sm:text-xl lg:absolute lg:inset-y-0 lg:left-0 lg:flex lg:w-1/3 lg:items-end lg:bg-transparent lg:px-8 lg:pb-10 lg:text-2xl">
+              En anderledes og særlig oplevelse – den bedste gave til jeres børn
+            </p>
           </div>
         </div>
       }

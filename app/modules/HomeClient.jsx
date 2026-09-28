@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Hero } from "./Hero";
+import { PreviaColourNote } from "./PreviaColourNote";
 import { ClubBanner } from "./ClubBanner";
 import { Hours } from "./Hours";
 import { Info } from "./Info";
@@ -12,6 +13,7 @@ export function HomeClient() {
   return (
     <main>
       <Hero />
+      <PreviaColourNote band />
       <ClubBanner />
       <section className="px-4 md:px-6 pb-4 md:pb-8">
         <div className="max-w-screen-xl mx-auto bg-white text-black rounded-md border-t-4 border-red px-6 py-4">

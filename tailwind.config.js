@@ -10,8 +10,8 @@ module.exports = {
   prefix: "",
   theme: {
     fontFamily: {
-      sans: ["Montserrat", "Inter", "sans-serif"],
-      serif: ["Libre Baskerville", "serif"],
+      sans: ["var(--font-montserrat)", "sans-serif"],
+      serif: ["var(--font-libre)", "serif"],
     },
     container: {
       center: true,

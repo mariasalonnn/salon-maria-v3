@@ -2,9 +2,10 @@
 
 import { DesktopNavigationMenu } from "@/components/NavigationMenu";
 import { Button } from "@/components/ui/button";
+import { servicePages } from "@/app/data/site";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export function Header() {
   return (
     <>
@@ -19,7 +20,13 @@ function DesktopHeader() {
     <header className="hidden md:block h-14 sticky top-0 z-20 bg-grey p-2 md:px-6 text-white">
       <nav className="max-w-screen-xl flex w-full justify-between items-center mx-auto">
         <Link href="/">
-          <Image src="/logo.webp" width="1600" height="302" alt="logo" className="h-10 w-auto" />
+          <Image
+            src="/logo.webp"
+            width={533}
+            height={101}
+            alt="Salon Maria – til forsiden"
+            className="h-10 w-auto"
+          />
         </Link>
         <DesktopNavigationMenu />
       </nav>
@@ -34,7 +41,13 @@ function MobileHeader() {
       <header className="md:hidden h-14 sticky top-0 z-30 bg-grey py-2 px-4 md:px-6 text-white">
         <nav className="max-w-screen-xl flex w-full justify-between items-center mx-auto">
           <Link href="/">
-            <Image src="/logo.webp" width="1600" height="302" alt="logo" className="h-10 w-auto" />
+            <Image
+              src="/logo.webp"
+              width={533}
+              height={101}
+              alt="Salon Maria – til forsiden"
+              className="h-10 w-auto"
+            />
           </Link>
           <button className="text-2xl" aria-label="Mobile navigation menu" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
@@ -77,8 +90,16 @@ function MobileHeader() {
 }
 
 function MobileNavigationMenu({ setIsOpen }) {
+  useEffect(() => {
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, []);
+
   return (
-    <nav className="md:hidden bg-grey p-2 px-4 md:px-6 text-white fixed inset-0 z-20 flex flex-col gap-8 text-3xl items-center justify-center">
+    <nav className="md:hidden bg-grey px-4 pt-20 pb-10 text-white fixed inset-0 z-20 flex flex-col gap-6 text-3xl items-center overflow-y-auto">
       <Link onClick={() => setIsOpen(false)} href="/#priser">
         Priser
       </Link>
@@ -88,6 +109,14 @@ function MobileNavigationMenu({ setIsOpen }) {
       <Link onClick={() => setIsOpen(false)} href="/abonnement">
         Abonnement
       </Link>
+      <div className="flex flex-col items-center gap-3 text-xl">
+        <p className="font-semibold">Behandlinger</p>
+        {servicePages.map((page) => (
+          <Link key={page.href} onClick={() => setIsOpen(false)} href={page.href}>
+            {page.title}
+          </Link>
+        ))}
+      </div>
       <Button variant="text" asChild className="text-3xl after:bottom-[6px] py-0">
         <Link href="https://salon-maria.planway.com/">Book tid</Link>
       </Button>

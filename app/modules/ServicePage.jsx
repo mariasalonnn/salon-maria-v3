@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { formatPrice } from "@/app/data/prices";
 import { bookingUrl, phone, phoneDisplay, servicePages } from "@/app/data/site";
 
 export function ServicePage({ path, heading, intro, children, priceItems = [], priceNote }) {
@@ -36,7 +37,7 @@ export function ServicePage({ path, heading, intro, children, priceItems = [], p
                   <div key={i} className="flex gap-2 items-center">
                     <div>{item.name}</div>
                     <div className="border-b border-dashed border-grey flex-1 mb-1.5 h-4"></div>
-                    <span className="min-w-max">{item.price} kr.</span>
+                    <span className="min-w-max">{formatPrice(item.price)} kr.</span>
                   </div>
                 ))}
               </div>
@@ -54,13 +55,13 @@ export function ServicePage({ path, heading, intro, children, priceItems = [], p
           <ul className="flex flex-col sm:flex-row gap-3 sm:gap-8">
             {related.map((page) => (
               <li key={page.href}>
-                <Link href={page.href} className="underline font-semibold">
+                <Link href={page.href} className="underline font-semibold inline-block py-2">
                   {page.title}
                 </Link>
               </li>
             ))}
             <li>
-              <Link href="/galleri" className="underline font-semibold">
+              <Link href="/galleri" className="underline font-semibold inline-block py-2">
                 Galleri
               </Link>
             </li>

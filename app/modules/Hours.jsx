@@ -19,6 +19,7 @@ export function Hours() {
           <div className=" flex flex-col gap-2 text-lg md:text-xl items-center text-center">
             <div>Tirsdag – fredag / 09:30 - 17:30</div>
             <div>Lørdag / 09:00 - 14:00</div>
+            <div>Søndag – mandag / Lukket</div>
           </div>
         </div>
       </div>

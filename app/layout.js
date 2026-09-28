@@ -1,9 +1,23 @@
-import { Inter } from "next/font/google";
+import { Libre_Baskerville, Montserrat } from "next/font/google";
 import "./globals.css";
 import "./index.css";
 import { Header } from "@/app/modules/Header";
 import { Footer } from "./modules/Footer";
 import Script from "next/script";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+const libreBaskerville = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-libre",
+  display: "swap",
+});
 
 const siteDescription =
   "Salon Maria er en familievenlig frisør i København NV for børn og voksne – en bæredygtig frisøroplevelse med innovative klipninger og luksuriøs hårpleje.";
@@ -13,9 +27,6 @@ export const metadata = {
   title: "Salon Maria | Frisør for børn og voksne i København NV",
   description: siteDescription,
   favicon: "/favicon.ico",
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "Salon Maria | Frisør for børn og voksne i København NV",
     description: siteDescription,
@@ -33,7 +44,11 @@ const jsonLd = {
   name: "Salon Maria",
   url: "https://www.salonmaria.info",
   logo: "https://www.salonmaria.info/logo_square.webp",
-  image: "https://www.salonmaria.info/logo_square.webp",
+  image: [
+    "https://www.salonmaria.info/gallery/boerneklip1.webp",
+    "https://www.salonmaria.info/gallery/boerneklip6.webp",
+    "https://www.salonmaria.info/maria.webp",
+  ],
   telephone: "+4539561666",
   priceRange: "100-3500 DKK",
   currenciesAccepted: "DKK",
@@ -84,7 +99,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="da">
+    <html lang="da" className={`${montserrat.variable} ${libreBaskerville.variable}`}>
       <Script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/927b04ae803e24da1af8530c/script.js"></Script>
       <body className="bg-grey">
         <script

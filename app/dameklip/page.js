@@ -22,7 +22,7 @@ export default function Dameklip() {
       heading="Dameklip"
       intro="Dameklip i en familievenlig frisørsalon i København NV."
       priceItems={womenItems}
-      priceNote="Studierabat / pensionistrabat: -10%. Du kan betale med kort, kontant og MobilePay."
+      priceNote="Studierabat / pensionistrabat: -10 %. Du kan betale med kort, kontant og MobilePay."
     >
       <p>
         Maria har over 20 års erfaring inden for frisørfaget både nationalt og internationalt. Hos
@@ -34,7 +34,7 @@ export default function Dameklip() {
         indbydende og familievenlig for både børn og voksne.
       </p>
       <p>
-        Maria er en erfaren voksen- og børnefrisør. Studerende og pensionister får 10% rabat.
+        Maria er en erfaren voksen- og børnefrisør. Studerende og pensionister får 10 % rabat.
       </p>
     </ServicePage>
   );

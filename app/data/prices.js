@@ -1,3 +1,14 @@
+export function formatPrice(price) {
+  const format = (value) => Number(value).toLocaleString("da-DK");
+  if (typeof price === "number") {
+    return format(price);
+  }
+  if (typeof price === "string") {
+    return price.replace(/\d{4,}/g, (digits) => format(digits));
+  }
+  return price;
+}
+
 export const prices = [
   {
     title: "Klip",

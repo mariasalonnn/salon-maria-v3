@@ -10,15 +10,15 @@ export function Footer() {
         <div className="flex flex-col items-center text-center sm:items-start sm:text-left gap-4">
           <Image
             src="/logo.webp"
-            width="1600"
-            height="302"
-            alt="logo"
+            width={533}
+            height={101}
+            alt="Salon Maria"
             className="h-10 w-auto object-contain"
           />
           <div className="flex flex-col gap-2">
             <div>CVR: 35768521</div>
-            <Link href="tel:+4539561666">TLF: +45 39 56 16 66</Link>
-            <address>Frederiksborgvej 202, 2400 København</address>
+            <Link href="tel:+4539561666">Tlf.: +45 39 56 16 66</Link>
+            <address>Frederiksborgvej 202, 2400 København NV</address>
           </div>
           <nav aria-label="Sider" className="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2">
             {servicePages.map((page) => (
@@ -33,8 +33,9 @@ export function Footer() {
         </div>
         <div className="font-bold flex flex-col items-center sm:items-end gap-2">
           <p className="text-2xl">Åbningstider</p>
-          <div>Tirsdag til fredag / 09:30 - 17:30</div>
+          <div>Tirsdag – fredag / 09:30 - 17:30</div>
           <div>Lørdag / 09:00 - 14:00</div>
+          <div>Søndag – mandag / Lukket</div>
           <div className="flex gap-4 flex-col-reverse sm:flex-row items-center">
             <Button asChild variant="text">
               <Link href="https://salon-maria.planway.com/">Book tid</Link>
@@ -45,6 +46,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center"
             >
             <svg height={24} aria-hidden="true" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -58,6 +60,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center"
             >
             <svg width={24} aria-hidden="true" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path

@@ -20,7 +20,7 @@ export default function FarveOgBalayage() {
       heading="Farve og balayage"
       intro="Hårfarve, striber og balayage med fokus på sunde, naturlige resultater."
       priceItems={colourItems}
-      priceNote="Studierabat / pensionistrabat: -10%."
+      priceNote="Studierabat / pensionistrabat: -10 %."
     >
       <p>
         Maria har over 20 års erfaring inden for frisørfaget både nationalt og internationalt. Hos

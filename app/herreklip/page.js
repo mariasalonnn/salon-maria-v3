@@ -9,7 +9,7 @@ export const metadata = pageMetadata({
   path,
   title: "Herreklip i København NV | Salon Maria",
   description:
-    "Herreklip hos Salon Maria på Frederiksborgvej i København NV. Erfaren herrefrisør, rådgivning om produkter og 10% studie- og pensionistrabat.",
+    "Herreklip hos Salon Maria på Frederiksborgvej i København NV. Erfaren herrefrisør, rådgivning om produkter og 10 % studie- og pensionistrabat.",
 });
 
 const menItems = prices
@@ -23,7 +23,7 @@ export default function Herreklip() {
       heading="Herreklip"
       intro="Herreklip i en indbydende og familievenlig frisørsalon i København NV."
       priceItems={menItems}
-      priceNote="Studierabat / pensionistrabat: -10%. Du kan betale med kort, kontant og MobilePay."
+      priceNote="Studierabat / pensionistrabat: -10 %. Du kan betale med kort, kontant og MobilePay."
     >
       <p>
         Ari har over 12 års erfaring og er vores herre- og børnefrisør. Han er dedikeret til at

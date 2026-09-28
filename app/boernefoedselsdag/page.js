@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ServicePage } from "../modules/ServicePage";
 import { pageMetadata, phone } from "../data/site";
 
@@ -6,16 +7,39 @@ const path = "/boernefoedselsdag";
 const description =
   "Maria kommer hjem til børnefødselsdagen med festfrisure, makeup og neglelak. 3.995 kr. for 10 børn. Ring og book hos Salon Maria.";
 
+const shareAlt =
+  "Børnefødselsdag hjemme hos jer – hår, makeup og neglelak, 3.995 kr. for 10 børn";
+
 export const metadata = pageMetadata({
   path,
   title: "Børnefødselsdag hjemme – hår, makeup og neglelak | Salon Maria",
   description,
+  image: {
+    url: "/boernefoedselsdag-banner.jpg",
+    width: 1280,
+    height: 720,
+    alt: shareAlt,
+  },
 });
 
 export default function Boernefoedselsdag() {
   return (
     <ServicePage
       path={path}
+      hero={
+        <div className="px-4 md:px-6 pt-8">
+          <div className="relative mx-auto aspect-[1280/720] w-full max-w-screen-xl overflow-hidden rounded-md">
+            <Image
+              src="/boernefoedselsdag-bg.webp"
+              alt="Børn med festfrisurer, tiara, glimmer og neglelak til en børnefødselsdag derhjemme"
+              fill
+              priority
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      }
       heading="Børnefødselsdag med Salon Maria"
       intro="En særlig oplevelse, hvor Maria kommer hjem til jer."
       priceItems={[

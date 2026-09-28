@@ -13,7 +13,7 @@ export const servicePages = [
 ];
 
 // Shared metadata for sub pages: canonical URL + OpenGraph basics.
-export function pageMetadata({ path, title, description }) {
+export function pageMetadata({ path, title, description, image }) {
   return {
     title,
     description,
@@ -25,7 +25,19 @@ export function pageMetadata({ path, title, description }) {
       siteName: "Salon Maria",
       locale: "da_DK",
       type: "website",
-      images: "/logo_square.webp",
+      images: image
+        ? [{ url: image.url, width: image.width, height: image.height, alt: image.alt }]
+        : "/logo_square.webp",
     },
+    ...(image
+      ? {
+          twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: [image.url],
+          },
+        }
+      : {}),
   };
 }

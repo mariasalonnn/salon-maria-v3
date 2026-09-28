@@ -100,6 +100,16 @@ function MobileNavigationMenu({ setIsOpen }) {
 
   return (
     <nav className="md:hidden bg-grey px-4 pt-20 pb-10 text-white fixed inset-0 z-20 flex flex-col gap-6 text-3xl items-center overflow-y-auto">
+      <Link
+        onClick={() => setIsOpen(false)}
+        href="/boernefoedselsdag"
+        className="inline-flex items-center gap-3 font-semibold text-[#D65A80]"
+      >
+        Børnefødselsdag
+        <span className="rounded-full bg-[#FDE8EF] px-2 py-0.5 text-sm font-bold uppercase leading-none text-[#6E3E3A]">
+          Ny
+        </span>
+      </Link>
       <Link onClick={() => setIsOpen(false)} href="/#priser">
         Priser
       </Link>
@@ -111,7 +121,9 @@ function MobileNavigationMenu({ setIsOpen }) {
       </Link>
       <div className="flex flex-col items-center gap-3 text-xl">
         <p className="font-semibold">Behandlinger</p>
-        {servicePages.map((page) => (
+        {servicePages
+          .filter((page) => page.href !== "/boernefoedselsdag")
+          .map((page) => (
           <Link key={page.href} onClick={() => setIsOpen(false)} href={page.href}>
             {page.title}
           </Link>

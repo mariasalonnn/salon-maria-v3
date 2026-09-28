@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { Hero } from "./Hero";
-import { PreviaColourNote } from "./PreviaColourNote";
+import { BirthdayBanner } from "./BirthdayBanner";
 import { ClubBanner } from "./ClubBanner";
+import { PreviaColourNote } from "./PreviaColourNote";
 import { Hours } from "./Hours";
 import { Info } from "./Info";
 import { Prices } from "./Prices";
@@ -13,15 +13,9 @@ export function HomeClient() {
   return (
     <main>
       <Hero />
-      <PreviaColourNote band />
+      <BirthdayBanner />
       <ClubBanner />
-      <section className="px-4 md:px-6 pb-4 md:pb-8">
-        <div className="max-w-screen-xl mx-auto bg-white text-black rounded-md border-t-4 border-red px-6 py-4">
-          <Link href="/boernefoedselsdag" className="underline font-semibold">
-            Nyhed: Børnefødselsdag hjemme hos jer
-          </Link>
-        </div>
-      </section>
+      <PreviaColourNote band />
       <Info slides={slides} enableGSAP />
       <Hours />
       <Prices />

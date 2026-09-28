@@ -39,7 +39,7 @@ export const prices = [
     ],
   },
   {
-    title: "Kur behandlinger",
+    title: "Keratin og hårbehandlinger",
     items: [
       { name: "Olaplex standalone", price: "Fra 355" },
       { name: "Keratin behandling", price: "Fra 2300" },

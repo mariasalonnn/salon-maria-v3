@@ -16,12 +16,12 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/medlemskab`,
+      url: `${baseUrl}/abonnement`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
     },
-    ...["/dameklip", "/boerneklip", "/herreklip", "/farve-og-balayage"].map((path) => ({
+    ...["/dameklip", "/boerneklip", "/herreklip", "/farve-og-balayage", "/keratin-og-haarbehandlinger"].map((path) => ({
       url: `${baseUrl}${path}`,
       lastModified,
       changeFrequency: "monthly",

@@ -35,7 +35,7 @@ const jsonLd = {
   logo: "https://www.salonmaria.info/logo_square.webp",
   image: "https://www.salonmaria.info/logo_square.webp",
   telephone: "+4539561666",
-  priceRange: "90-2500 DKK",
+  priceRange: "100-3500 DKK",
   currenciesAccepted: "DKK",
   paymentAccepted: "Kort, kontant, MobilePay",
   address: {

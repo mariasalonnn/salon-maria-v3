@@ -90,7 +90,7 @@ export function DesktopNavigationMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden sm:block">
-          <Link href="/medlemskab">Medlemskab</Link>
+          <Link href="/abonnement">Abonnement</Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Button variant="text" asChild>

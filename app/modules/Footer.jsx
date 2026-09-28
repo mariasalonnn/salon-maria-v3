@@ -26,8 +26,8 @@ export function Footer() {
                 {page.title}
               </Link>
             ))}
-            <Link href="/medlemskab" className="underline">
-              Medlemskab
+            <Link href="/abonnement" className="underline">
+              Abonnement
             </Link>
           </nav>
         </div>

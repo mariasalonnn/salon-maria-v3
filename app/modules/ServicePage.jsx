@@ -22,6 +22,11 @@ export function ServicePage({ path, heading, intro, children, priceItems = [], p
                 <Link href={`tel:${phone}`}>Ring {phoneDisplay}</Link>
               </Button>
             </div>
+            <p className="rounded-md border-2 border-red px-4 py-3 text-base">
+              <Link href="/abonnement" className="underline font-semibold">
+                Spar 15 % med et Salon Maria Club abonnement
+              </Link>
+            </p>
           </div>
           {priceItems.length > 0 && (
             <div className="lg:w-[420px] bg-white text-black rounded-md p-6 flex flex-col gap-4 self-start w-full">

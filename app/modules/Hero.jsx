@@ -71,7 +71,7 @@ export function Hero() {
             width={1004}
             height={1508}
             priority={true}
-            alt="Frisør i Salon Maria"
+            alt="Frisør Ari"
             sizes="(max-width: 1024px) 50vw, 400px"
           />
         </div>

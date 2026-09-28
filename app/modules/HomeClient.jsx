@@ -39,7 +39,7 @@ const slides = [
   {
     content: `
         <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-serif">
-          Om Arash
+          Om Ari
         </h2>
         <p>
           Ari, med over 12 års erfaring, er vores herre- og børnefrisør. Han er dedikeret til at
@@ -48,7 +48,7 @@ const slides = [
         </p>
       `,
     image: "/arash.webp",
-    alt: "Frisør i Salon Maria",
+    alt: "Frisør Ari",
   },
   {
     content: `

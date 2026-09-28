@@ -34,7 +34,7 @@ export default function Boerneklip() {
         slikkepind.
       </p>
       <p>
-        Ari har over 12 års erfaring og er vores herre- og børnefrisør. Han klipper alle slags
+        Ari har arbejdet som frisør siden 2012 og er vores herre- og børnefrisør. Han klipper alle slags
         børnehår med tålmodighed og smil, og Maria er en erfaren voksen- og børnefrisør.
       </p>
     </ServicePage>

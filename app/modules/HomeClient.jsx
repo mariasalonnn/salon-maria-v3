@@ -42,7 +42,7 @@ const slides = [
           Om Ari
         </h2>
         <p>
-          Ari, med over 12 års erfaring, er vores herre- og børnefrisør. Han er dedikeret til at
+          Ari har arbejdet som frisør siden 2012 og er vores herre- og børnefrisør. Han er dedikeret til at
           klippe alle slags herre- og børnehår med tålmodighed og smil. Efter klipningen rådgiver
           han om de rigtige produkter for at opretholde resultatet derhjemme.
         </p>

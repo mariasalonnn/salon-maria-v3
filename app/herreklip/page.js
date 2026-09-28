@@ -26,7 +26,7 @@ export default function Herreklip() {
       priceNote="Studierabat / pensionistrabat: -10 %. Du kan betale med kort, kontant og MobilePay."
     >
       <p>
-        Ari har over 12 års erfaring og er vores herre- og børnefrisør. Han er dedikeret til at
+        Ari har arbejdet som frisør siden 2012 og er vores herre- og børnefrisør. Han er dedikeret til at
         klippe alle slags herrehår med tålmodighed og smil.
       </p>
       <p>

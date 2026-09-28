@@ -39,7 +39,7 @@ const memberships = [
   },
   {
     name: "Maria Men's Club",
-    price: "699 kr./år",
+    price: "599 kr./år",
     benefits: [
       "15 % rabat på alle herrebehandlinger",
       "15 % rabat på hårprodukter",

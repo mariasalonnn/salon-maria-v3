@@ -13,7 +13,7 @@ export const metadata = pageMetadata({
 
 const childItems = prices
   .find((category) => category.title === "Klip")
-  .items.filter((item) => item.name.startsWith("Børn"));
+  .items.filter((item) => /^(Børn|Drenge|Pige)/.test(item.name));
 
 export default function Boerneklip() {
   return (

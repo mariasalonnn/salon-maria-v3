@@ -23,8 +23,8 @@ export function Prices() {
           <p>Du kan betale med kort, kontant og MobilePay</p>
           <p>Studierabat / pensionist: -10%</p>
           <p>
-            <Link href="/medlemskab" className="underline font-semibold">
-              Salon Maria Club – se medlemskab
+            <Link href="/abonnement" className="underline font-semibold">
+              Salon Maria Club – se abonnementer
             </Link>
           </p>
           <Button asChild variant="outline" className="border-black text-black">

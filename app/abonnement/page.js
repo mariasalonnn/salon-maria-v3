@@ -2,19 +2,19 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { bookingUrl, pageMetadata, phone } from "../data/site";
 
-const path = "/medlemskab";
+const path = "/abonnement";
 const membershipSignupUrl = "https://salon-maria.planway.com/widget/buy_membership";
 
 export const metadata = pageMetadata({
   path,
-  title: "Salon Maria Club – medlemskab | Salon Maria",
+  title: "Salon Maria Club – abonnement | Salon Maria",
   description:
-    "Salon Maria Club hos Salon Maria i København NV: familiemedlemskab, damemedlemskab og herremedlemskab. Bliv medlem ved at ringe til salonen.",
+    "Salon Maria Club abonnement hos Salon Maria i København NV: Maria Familie's Club, Maria Women's Club og Maria Men's Club. Køb abonnement online eller ring til salonen.",
 });
 
 const memberships = [
   {
-    name: "Familiemedlemskab",
+    name: "Maria Familie's Club",
     price: "1.499 kr./år",
     benefits: [
       "Gælder for 2 voksne og hjemmeboende børn under 18 år",
@@ -26,7 +26,7 @@ const memberships = [
     ],
   },
   {
-    name: "Damemedlemskab",
+    name: "Maria Women's Club",
     price: "999 kr./år",
     benefits: [
       "15 % rabat på damebehandlinger",
@@ -38,7 +38,7 @@ const memberships = [
     ],
   },
   {
-    name: "Herremedlemskab",
+    name: "Maria Men's Club",
     price: "699 kr./år",
     benefits: [
       "15 % rabat på alle herrebehandlinger",
@@ -50,13 +50,13 @@ const memberships = [
   },
 ];
 
-export default function Medlemskab() {
+export default function Abonnement() {
   return (
     <main>
       <section className="px-4 md:px-6 py-8 lg:py-[100px] text-white">
         <div className="max-w-screen-xl mx-auto flex flex-col gap-8">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif max-w-4xl">
-            Salon Maria Club – medlemskab
+            Salon Maria Club – abonnement
           </h1>
           <ul className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {memberships.map((membership) => (
@@ -76,16 +76,16 @@ export default function Medlemskab() {
                     href={membershipSignupUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Bliv medlem, ${membership.name}`}
+                    aria-label={`Køb abonnement, ${membership.name}`}
                   >
-                    Bliv medlem
+                    Køb abonnement
                   </a>
                 </Button>
               </li>
             ))}
           </ul>
           <p className="text-base md:text-lg max-w-3xl">
-            Bliv medlem online via vores bookingsystem, ring til os på{" "}
+            Køb dit abonnement online via vores bookingsystem, ring til os på{" "}
             <a href={`tel:${phone}`} className="underline font-semibold">
               39 56 16 66
             </a>{" "}

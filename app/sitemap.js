@@ -16,7 +16,7 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/medlemskab`,
+      url: `${baseUrl}/abonnement`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.8,

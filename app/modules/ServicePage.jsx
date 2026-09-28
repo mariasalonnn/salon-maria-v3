@@ -1,11 +1,29 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { formatPrice } from "@/app/data/prices";
 import { bookingUrl, phone, phoneDisplay, servicePages } from "@/app/data/site";
 
-export function ServicePage({ path, heading, intro, children, priceItems = [], priceNote }) {
+export function ServicePage({
+  path,
+  heading,
+  intro,
+  children,
+  priceItems = [],
+  priceNote,
+  primaryAction,
+  secondaryAction,
+  showMembership = true,
+  hero,
+}) {
   const related = servicePages.filter((page) => page.href !== path);
+  const book = primaryAction ?? { href: bookingUrl, label: "Book tid" };
+  const call =
+    secondaryAction === undefined
+      ? { href: `tel:${phone}`, label: `Ring ${phoneDisplay}` }
+      : secondaryAction;
   return (
     <main>
+      {hero}
       <section className="px-4 md:px-6 py-8 lg:py-[100px] text-white">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-16">
           <div className="flex-1 flex flex-col gap-6 items-start">
@@ -16,17 +34,21 @@ export function ServicePage({ path, heading, intro, children, priceItems = [], p
             <div className="flex flex-col gap-4 text-base md:text-lg">{children}</div>
             <div className="flex flex-wrap gap-4 items-center">
               <Button asChild variant="outline">
-                <Link href={bookingUrl}>Book tid</Link>
+                <Link href={book.href}>{book.label}</Link>
               </Button>
-              <Button asChild variant="text">
-                <Link href={`tel:${phone}`}>Ring {phoneDisplay}</Link>
-              </Button>
+              {call && (
+                <Button asChild variant="text">
+                  <Link href={call.href}>{call.label}</Link>
+                </Button>
+              )}
             </div>
-            <p className="rounded-md border-2 border-red px-4 py-3 text-base">
-              <Link href="/abonnement" className="underline font-semibold">
-                Spar 15 % med et Salon Maria Club abonnement
-              </Link>
-            </p>
+            {showMembership && (
+              <p className="rounded-md border-2 border-red px-4 py-3 text-base">
+                <Link href="/abonnement" className="underline font-semibold">
+                  Spar 15 % med et Salon Maria Club abonnement
+                </Link>
+              </p>
+            )}
           </div>
           {priceItems.length > 0 && (
             <div className="lg:w-[420px] bg-white text-black rounded-md p-6 flex flex-col gap-4 self-start w-full">
@@ -36,7 +58,7 @@ export function ServicePage({ path, heading, intro, children, priceItems = [], p
                   <div key={i} className="flex gap-2 items-center">
                     <div>{item.name}</div>
                     <div className="border-b border-dashed border-grey flex-1 mb-1.5 h-4"></div>
-                    <span className="min-w-max">{item.price} kr.</span>
+                    <span className="min-w-max">{formatPrice(item.price)} kr.</span>
                   </div>
                 ))}
               </div>
@@ -54,13 +76,13 @@ export function ServicePage({ path, heading, intro, children, priceItems = [], p
           <ul className="flex flex-col sm:flex-row gap-3 sm:gap-8">
             {related.map((page) => (
               <li key={page.href}>
-                <Link href={page.href} className="underline font-semibold">
+                <Link href={page.href} className="underline font-semibold inline-block py-2">
                   {page.title}
                 </Link>
               </li>
             ))}
             <li>
-              <Link href="/galleri" className="underline font-semibold">
+              <Link href="/galleri" className="underline font-semibold inline-block py-2">
                 Galleri
               </Link>
             </li>

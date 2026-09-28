@@ -24,7 +24,7 @@ export default function Boerneklip() {
       priceItems={childItems}
     >
       <p>
-        Vi er stolte af at have åbnet Københavns første børnefrisør i over 10 år. Salonen
+        Siden 2014 – Københavns første børnefrisør med sin egen børnevenlige indretning. Salonen
         er indrettet specielt til børn med inspiration fra engelske børnefrisører, og vi byder både
         børn og voksne velkommen i vores to forskellige lokaler.
       </p>
@@ -34,7 +34,7 @@ export default function Boerneklip() {
         slikkepind.
       </p>
       <p>
-        Ari har over 12 års erfaring og er vores herre- og børnefrisør. Han klipper alle slags
+        Ari har arbejdet som frisør siden 2012 og er vores herre- og børnefrisør. Han klipper alle slags
         børnehår med tålmodighed og smil, og Maria er en erfaren voksen- og børnefrisør.
       </p>
     </ServicePage>

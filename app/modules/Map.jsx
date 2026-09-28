@@ -6,8 +6,10 @@ export default function Map() {
           Find os her
         </h2>
         <iframe
-          title="Salon Maria location on Google Maps"
+          title="Kort: Salon Maria, Frederiksborgvej 202, 2400 København NV"
           className="h-full w-full min-h-[500px] rounded-lg shadow-lg"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
           src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJE0tPQhZSUkYRZ4aD_7DVKN8&amp;key=AIzaSyCjJJ273kEePGsPvG4fqoIEnSaUf5xSPwk"
         ></iframe>
       </div>

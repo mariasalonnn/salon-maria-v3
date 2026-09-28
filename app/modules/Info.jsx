@@ -30,14 +30,13 @@ export function Info({ enableGSAP = false, slides = [] }) {
   }, [api]);
 
   const info = useRef();
-  const tl = useRef();
 
   useGSAP(
     () => {
       if (!enableGSAP) {
         return;
       }
-      tl.current = gsap.timeline().to(info.current, { duration: 1, opacity: 1, delay: 1 });
+      gsap.from(info.current, { duration: 1, opacity: 0, delay: 1 });
     },
     { scope: info }
   );
@@ -45,7 +44,7 @@ export function Info({ enableGSAP = false, slides = [] }) {
   return (
     <section
       ref={info}
-      className={clsx("py-10 md:py-[100px] lg:px-6 bg-white text-black", enableGSAP && "opacity-0")}
+      className="py-10 md:py-[100px] lg:px-6 bg-white text-black"
     >
       {slides.length > 0 && (
         <Carousel
@@ -73,6 +72,7 @@ export function Info({ enableGSAP = false, slides = [] }) {
                     width={512}
                     height={512}
                     alt={slide.alt}
+                    sizes="(max-width: 1024px) 85vw, 640px"
                     className="aspect-square object-cover object-top rounded-lg w-full h-full"
                   ></Image>
                 </CarouselItem>

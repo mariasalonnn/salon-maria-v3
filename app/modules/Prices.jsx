@@ -6,8 +6,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { prices } from "../data/prices";
-import { useAccordionStore } from "../page";
+import { formatPrice, prices } from "../data/prices";
+import { useAccordionStore } from "../data/store";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { servicePages } from "../data/site";
@@ -21,7 +21,7 @@ export function Prices() {
             Priser
           </h2>
           <p>Du kan betale med kort, kontant og MobilePay</p>
-          <p>Studierabat / pensionist: -10%</p>
+          <p>Studierabat / pensionist: -10 %</p>
           <p>
             <Link href="/abonnement" className="underline font-semibold">
               Salon Maria Club – se abonnementer
@@ -33,7 +33,7 @@ export function Prices() {
           <div className="flex flex-col gap-1 pt-2">
             <p className="font-semibold">Læs mere om:</p>
             {servicePages.map((page) => (
-              <Link key={page.href} href={page.href} className="underline">
+              <Link key={page.href} href={page.href} className="underline inline-block py-2">
                 {page.title}
               </Link>
             ))}
@@ -54,17 +54,18 @@ function PriceList() {
         type="single"
         collapsible
         className="flex flex-col gap-2 md:pt-4 lg:pt-7"
-        value={`value-${activeAccordion}`}
+        value={activeAccordion === -1 ? "" : `value-${activeAccordion}`}
+        onValueChange={(v) => setActiveAccordion(v ? Number(v.split("-")[1]) : -1)}
       >
         {prices.map((price, i) => (
-          <AccordionItem value={`value-${i}`} key={i} onClick={() => setActiveAccordion(i)}>
+          <AccordionItem value={`value-${i}`} key={i}>
             <AccordionTrigger className="text-xl">{price.title}</AccordionTrigger>
             <AccordionContent className="flex flex-col gap-2">
               {price.items.map((item, i) => (
                 <div key={i} className="flex gap-2 items-center">
                   <div>{item.name}</div>
                   <div className="border-b border-dashed border-grey flex-1 mb-1.5 h-4"></div>
-                  <span className="min-w-max">{item.from && "Fra "}{item.price} kr.</span>
+                  <span className="min-w-max">{item.from && "Fra "}{formatPrice(item.price)} kr.</span>
                 </div>
               ))}
             </AccordionContent>

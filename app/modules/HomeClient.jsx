@@ -56,7 +56,7 @@ const slides = [
           Børnefrisør
         </h2>
         <p>
-          Vi er stolte af at have åbnet Københavns første børnefrisør i over 10 år. Vores salon er
+          Siden 2014 – Københavns første børnefrisør med sin egen børnevenlige indretning. Vores salon er
           designet specielt til børn med inspiration fra engelske børnefrisører. Maria, en erfaren
           voksen- og børnefrisør, byder både børn og voksne velkommen i vores to forskellige
           lokaler.

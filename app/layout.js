@@ -42,6 +42,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "HairSalon",
   name: "Salon Maria",
+  foundingDate: "2014",
   url: "https://www.salonmaria.info",
   logo: "https://www.salonmaria.info/logo_square.webp",
   image: [

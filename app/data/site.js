@@ -8,6 +8,7 @@ export const servicePages = [
   { href: "/boerneklip", title: "Børneklip" },
   { href: "/herreklip", title: "Herreklip" },
   { href: "/farve-og-balayage", title: "Farve og balayage" },
+  { href: "/keratin-og-haarbehandlinger", title: "Keratin og hårbehandlinger" },
 ];
 
 // Shared metadata for sub pages: canonical URL + OpenGraph basics.

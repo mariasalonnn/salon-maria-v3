@@ -21,7 +21,7 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.8,
     },
-    ...["/dameklip", "/boerneklip", "/herreklip", "/farve-og-balayage"].map((path) => ({
+    ...["/dameklip", "/boerneklip", "/herreklip", "/farve-og-balayage", "/keratin-og-haarbehandlinger"].map((path) => ({
       url: `${baseUrl}${path}`,
       lastModified,
       changeFrequency: "monthly",

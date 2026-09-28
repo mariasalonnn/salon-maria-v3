@@ -130,6 +130,22 @@ const products = [
   {
     content: `
         <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-serif">
+          Infinitiv
+        </h2>
+        <p>
+          Infinitiv er en permanent hårfarve fra Affinage Infiniti, som vi køber hos Salon Support.
+          Den har lav ammoniak og løfter og afsætter farve på samme tid.
+        </p>
+        <p>
+          Formlen er plejende, kan dække gråt hår og findes i over 85 nuancer.
+        </p>
+      `,
+    image: "/infinitiv.webp",
+    alt: "Tube med Affinage Infiniti permanent hårfarve, nuance 1.0 sort",
+  },
+  {
+    content: `
+        <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-serif">
         Wella Professionals
         </h2>
         <p>

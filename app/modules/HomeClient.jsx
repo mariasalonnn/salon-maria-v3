@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Hero } from "./Hero";
 import { ClubBanner } from "./ClubBanner";
 import { Hours } from "./Hours";
@@ -12,6 +13,13 @@ export function HomeClient() {
     <main>
       <Hero />
       <ClubBanner />
+      <section className="px-4 md:px-6 pb-4 md:pb-8">
+        <div className="max-w-screen-xl mx-auto bg-white text-black rounded-md border-t-4 border-red px-6 py-4">
+          <Link href="/boernefoedselsdag" className="underline font-semibold">
+            Nyhed: Børnefødselsdag hjemme hos jer
+          </Link>
+        </div>
+      </section>
       <Info slides={slides} enableGSAP />
       <Hours />
       <Prices />

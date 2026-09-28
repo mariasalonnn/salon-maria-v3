@@ -3,8 +3,23 @@ import Link from "next/link";
 import { formatPrice } from "@/app/data/prices";
 import { bookingUrl, phone, phoneDisplay, servicePages } from "@/app/data/site";
 
-export function ServicePage({ path, heading, intro, children, priceItems = [], priceNote }) {
+export function ServicePage({
+  path,
+  heading,
+  intro,
+  children,
+  priceItems = [],
+  priceNote,
+  primaryAction,
+  secondaryAction,
+  showMembership = true,
+}) {
   const related = servicePages.filter((page) => page.href !== path);
+  const book = primaryAction ?? { href: bookingUrl, label: "Book tid" };
+  const call =
+    secondaryAction === undefined
+      ? { href: `tel:${phone}`, label: `Ring ${phoneDisplay}` }
+      : secondaryAction;
   return (
     <main>
       <section className="px-4 md:px-6 py-8 lg:py-[100px] text-white">
@@ -17,17 +32,21 @@ export function ServicePage({ path, heading, intro, children, priceItems = [], p
             <div className="flex flex-col gap-4 text-base md:text-lg">{children}</div>
             <div className="flex flex-wrap gap-4 items-center">
               <Button asChild variant="outline">
-                <Link href={bookingUrl}>Book tid</Link>
+                <Link href={book.href}>{book.label}</Link>
               </Button>
-              <Button asChild variant="text">
-                <Link href={`tel:${phone}`}>Ring {phoneDisplay}</Link>
-              </Button>
+              {call && (
+                <Button asChild variant="text">
+                  <Link href={call.href}>{call.label}</Link>
+                </Button>
+              )}
             </div>
-            <p className="rounded-md border-2 border-red px-4 py-3 text-base">
-              <Link href="/abonnement" className="underline font-semibold">
-                Spar 15 % med et Salon Maria Club abonnement
-              </Link>
-            </p>
+            {showMembership && (
+              <p className="rounded-md border-2 border-red px-4 py-3 text-base">
+                <Link href="/abonnement" className="underline font-semibold">
+                  Spar 15 % med et Salon Maria Club abonnement
+                </Link>
+              </p>
+            )}
           </div>
           {priceItems.length > 0 && (
             <div className="lg:w-[420px] bg-white text-black rounded-md p-6 flex flex-col gap-4 self-start w-full">

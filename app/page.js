@@ -1,6 +1,7 @@
 "use client";
 import { create } from "zustand";
 import { Hero } from "./modules/Hero";
+import { ClubBanner } from "./modules/ClubBanner";
 import { Hours } from "./modules/Hours";
 import { Info } from "./modules/Info";
 import { Prices } from "./modules/Prices";
@@ -62,6 +63,7 @@ export default function Home() {
         </DialogContent>
       </Dialog> */}
       <Hero />
+      <ClubBanner />
       <Info slides={slides} enableGSAP />
       <Hours />
       <Prices />

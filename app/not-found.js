@@ -2,6 +2,8 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Siden findes ikke | Salon Maria",
+  description:
+    "Siden findes ikke. Gå til forsiden, se priser eller book tid hos Salon Maria i København NV.",
   robots: { index: false },
 };
 

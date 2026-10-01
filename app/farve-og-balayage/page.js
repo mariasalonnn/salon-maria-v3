@@ -1,15 +1,15 @@
 import { ServicePage } from "../modules/ServicePage";
 import { PreviaColourNote } from "../modules/PreviaColourNote";
-import { prices } from "../data/prices";
+import { formatPrice, priceByName, prices } from "../data/prices";
 import { pageMetadata } from "../data/site";
 
 const path = "/farve-og-balayage";
+const balayagePrice = formatPrice(priceByName("Balayage & babylights"));
 
 export const metadata = pageMetadata({
   path,
   title: "Farve og balayage i København NV | Salon Maria",
-  description:
-    "Hårfarve, striber og balayage hos Salon Maria i København NV. Spørg efter ammoniakfri farve fra Previa, når du booker.",
+  description: `Balayage, babylights, striber og hårfarve hos Salon Maria i København NV. Balayage ${balayagePrice} kr. Spørg efter ammoniakfri farve fra Previa, når du booker.`,
 });
 
 const colourItems = prices.find((category) => category.title === "Farve").items;
@@ -18,7 +18,7 @@ export default function FarveOgBalayage() {
   return (
     <ServicePage
       path={path}
-      heading="Farve og balayage"
+      heading="Farve og balayage i København NV"
       intro="Hårfarve, striber og balayage med fokus på sunde, naturlige resultater."
       priceItems={colourItems}
       priceNote="Studierabat / pensionistrabat: -10 %."

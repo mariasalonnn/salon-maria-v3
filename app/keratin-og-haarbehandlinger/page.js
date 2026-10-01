@@ -1,13 +1,14 @@
 import { ServicePage } from "../modules/ServicePage";
+import { formatPrice, priceByName } from "../data/prices";
 import { pageMetadata } from "../data/site";
 
 const path = "/keratin-og-haarbehandlinger";
+const keratinFrom = formatPrice(priceByName("Keratin behandling"));
 
 export const metadata = pageMetadata({
   path,
-  title: "Keratin, protein og hårbehandlinger i København NV | Salon Maria",
-  description:
-    "Keratin, proteinbehandling, Hair Botox, K18 og Olaplex hos Salon Maria, frisør i København NV. Se priser og book tid.",
+  title: "Keratinbehandling og hårkure i København NV | Salon Maria",
+  description: `Keratinbehandling fra ${keratinFrom} kr. samt Olaplex, K18 og Botox hår hos Salon Maria, frisør i København NV. Se priser og book tid online.`,
 });
 
 const treatmentItems = [
@@ -32,7 +33,7 @@ export default function KeratinOgHaarbehandlinger() {
   return (
     <ServicePage
       path={path}
-      heading="Keratin, protein og hårbehandlinger i København NV"
+      heading="Keratinbehandling og hårkure i København NV"
       intro="Hårbehandlinger hos Salon Maria i København NV."
       priceItems={treatmentItems}
     >

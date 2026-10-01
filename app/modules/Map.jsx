@@ -5,12 +5,16 @@ export default function Map() {
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-serif text-center">
           Find os her
         </h2>
+        <p className="text-center text-base md:text-lg max-w-3xl mx-auto">
+          Du finder os på Frederiksborgvej 202 i København NV – i Bispebjerg, tæt på Emdrup og
+          Utterslev Mose.
+        </p>
         <iframe
           title="Kort: Salon Maria, Frederiksborgvej 202, 2400 København NV"
           className="h-full w-full min-h-[500px] rounded-lg shadow-lg"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJE0tPQhZSUkYRZ4aD_7DVKN8&amp;key=AIzaSyCjJJ273kEePGsPvG4fqoIEnSaUf5xSPwk"
+          src="https://www.google.com/maps?q=place_id:ChIJtZ2yQxZSUkYR8GoDh9FxfuI&output=embed"
         ></iframe>
       </div>
     </section>

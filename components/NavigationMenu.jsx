@@ -1,11 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import { servicePages } from "@/app/data/site";
 import { Button } from "./ui/button";
 import {
   NavigationMenu,
+  NavigationMenuContent,
   NavigationMenuItem,
+  NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
 export function DesktopNavigationMenu() {
@@ -22,6 +26,27 @@ export function DesktopNavigationMenu() {
               Ny
             </span>
           </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem className="hidden sm:block">
+          <NavigationMenuTrigger className="bg-transparent px-2 text-white hover:bg-white/10">
+            Behandlinger
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-64 gap-1 p-3">
+              {servicePages.map((page) => (
+                <li key={page.href}>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href={page.href}
+                      className="block rounded-md px-3 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-100"
+                    >
+                      {page.title}
+                    </Link>
+                  </NavigationMenuLink>
+                </li>
+              ))}
+            </ul>
+          </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden sm:block">
           <Link href="/#priser">Priser</Link>

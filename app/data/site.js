@@ -3,6 +3,13 @@ export const bookingUrl = "https://salon-maria.planway.com/";
 export const phone = "+4539561666";
 export const phoneDisplay = "+45 39 56 16 66";
 
+export const shareImage = {
+  url: "/og-salon-maria.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Salon Maria, frisør på Frederiksborgvej 202 i København NV",
+};
+
 export const servicePages = [
   { href: "/dameklip", title: "Dameklip" },
   { href: "/boerneklip", title: "Børneklip" },
@@ -14,6 +21,7 @@ export const servicePages = [
 
 // Shared metadata for sub pages: canonical URL + OpenGraph basics.
 export function pageMetadata({ path, title, description, image }) {
+  const og = image ?? shareImage;
   return {
     title,
     description,
@@ -25,19 +33,13 @@ export function pageMetadata({ path, title, description, image }) {
       siteName: "Salon Maria",
       locale: "da_DK",
       type: "website",
-      images: image
-        ? [{ url: image.url, width: image.width, height: image.height, alt: image.alt }]
-        : "/logo_square.webp",
+      images: [{ url: og.url, width: og.width, height: og.height, alt: og.alt }],
     },
-    ...(image
-      ? {
-          twitter: {
-            card: "summary_large_image",
-            title,
-            description,
-            images: [image.url],
-          },
-        }
-      : {}),
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [og.url],
+    },
   };
 }

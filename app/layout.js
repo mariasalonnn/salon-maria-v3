@@ -3,6 +3,7 @@ import "./globals.css";
 import "./index.css";
 import { Header } from "@/app/modules/Header";
 import { Footer } from "./modules/Footer";
+import { shareImage } from "./data/site";
 import Script from "next/script";
 
 const montserrat = Montserrat({
@@ -20,7 +21,7 @@ const libreBaskerville = Libre_Baskerville({
 });
 
 const siteDescription =
-  "Salon Maria er en familievenlig frisør i København NV for børn og voksne – en bæredygtig frisøroplevelse med innovative klipninger og luksuriøs hårpleje.";
+  "Familievenlig frisør på Frederiksborgvej 202 i København NV. Børneklip, dameklip, herreklip, farve og balayage. Åbent tirsdag–lørdag. Book tid online.";
 
 export const metadata = {
   metadataBase: new URL('https://www.salonmaria.info/'),
@@ -34,16 +35,30 @@ export const metadata = {
     siteName: "Salon Maria",
     locale: "da_DK",
     type: "website",
-    images: '/logo_square.webp',
+    images: [shareImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Salon Maria | Frisør for børn og voksne i København NV",
+    description: siteDescription,
+    images: [shareImage.url],
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "HairSalon",
+  "@id": "https://www.salonmaria.info/#salon",
   name: "Salon Maria",
   foundingDate: "2014",
   url: "https://www.salonmaria.info",
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 55.7221091,
+    longitude: 12.5298994,
+  },
+  hasMap: "https://www.google.com/maps/place/?q=place_id:ChIJtZ2yQxZSUkYR8GoDh9FxfuI",
+  areaServed: ["København NV", "Bispebjerg", "Emdrup", "Utterslev"],
   logo: "https://www.salonmaria.info/logo_square.webp",
   image: [
     "https://www.salonmaria.info/gallery/boerneklip1.webp",
@@ -78,6 +93,7 @@ const jsonLd = {
   sameAs: [
     "https://www.facebook.com/salonmaria.info",
     "https://www.instagram.com/salonmaria.info/",
+    "https://maps.google.com/?cid=16320607244364507888",
   ],
   potentialAction: {
     "@type": "ReserveAction",

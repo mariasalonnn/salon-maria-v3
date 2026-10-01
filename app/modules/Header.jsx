@@ -25,6 +25,8 @@ function DesktopHeader() {
             width={533}
             height={101}
             alt="Salon Maria – til forsiden"
+            priority
+            sizes="200px"
             className="h-10 w-auto"
           />
         </Link>
@@ -46,6 +48,8 @@ function MobileHeader() {
               width={533}
               height={101}
               alt="Salon Maria – til forsiden"
+              priority
+              sizes="200px"
               className="h-10 w-auto"
             />
           </Link>

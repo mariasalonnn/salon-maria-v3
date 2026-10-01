@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { ServicePage } from "../modules/ServicePage";
-import { prices } from "../data/prices";
+import { formatPrice, priceByName, prices } from "../data/prices";
 import { pageMetadata } from "../data/site";
 
 const path = "/herreklip";
+const herrePrice = formatPrice(priceByName("Herreklip"));
 
 export const metadata = pageMetadata({
   path,
   title: "Herreklip i København NV | Salon Maria",
-  description:
-    "Herreklip hos Salon Maria på Frederiksborgvej i København NV. Erfaren herrefrisør, rådgivning om produkter og 10 % studie- og pensionistrabat.",
+  description: `Herreklip til ${herrePrice} kr. hos Salon Maria på Frederiksborgvej i København NV. Erfaren herrefrisør og 10 % studie- og pensionistrabat. Book tid online.`,
 });
 
 const menItems = prices
@@ -20,7 +20,7 @@ export default function Herreklip() {
   return (
     <ServicePage
       path={path}
-      heading="Herreklip"
+      heading="Herreklip i København NV"
       intro="Herreklip i en indbydende og familievenlig frisørsalon i København NV."
       priceItems={menItems}
       priceNote="Studierabat / pensionistrabat: -10 %. Du kan betale med kort, kontant og MobilePay."

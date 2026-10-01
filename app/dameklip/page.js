@@ -1,14 +1,16 @@
 import { ServicePage } from "../modules/ServicePage";
-import { prices } from "../data/prices";
+import { formatPrice, lowestMatchingPrice, prices } from "../data/prices";
 import { pageMetadata } from "../data/site";
 
 const path = "/dameklip";
+const dameFrom = formatPrice(
+  lowestMatchingPrice("Klip", (item) => item.name.toLowerCase().includes("dame"))
+);
 
 export const metadata = pageMetadata({
   path,
   title: "Dameklip i København NV | Salon Maria",
-  description:
-    "Dameklip hos Salon Maria, frisør i København NV. Maria har over 20 års erfaring, med fokus på hårets sundhed og naturlige, bæredygtige produkter.",
+  description: `Dameklip fra ${dameFrom} kr. hos Salon Maria på Frederiksborgvej i København NV. Maria har over 20 års erfaring og fokus på hårets sundhed. Book tid online.`,
 });
 
 const womenItems = prices
@@ -19,7 +21,7 @@ export default function Dameklip() {
   return (
     <ServicePage
       path={path}
-      heading="Dameklip"
+      heading="Dameklip i København NV"
       intro="Dameklip i en familievenlig frisørsalon i København NV."
       priceItems={womenItems}
       priceNote="Studierabat / pensionistrabat: -10 %. Du kan betale med kort, kontant og MobilePay."

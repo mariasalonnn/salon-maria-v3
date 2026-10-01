@@ -7,9 +7,9 @@ const membershipSignupUrl = "https://salon-maria.planway.com/widget/buy_membersh
 
 export const metadata = pageMetadata({
   path,
-  title: "Salon Maria Club – abonnement | Salon Maria",
+  title: "Salon Maria Club – abonnement på klip | Salon Maria",
   description:
-    "Salon Maria Club abonnement hos Salon Maria i København NV: Maria Familie's Club, Maria Women's Club og Maria Men's Club. Køb abonnement online eller ring til salonen.",
+    "Salon Maria Club: abonnement hos Salon Maria i København NV. Vælg Familie's, Women's eller Men's Club og spar 15 %. Køb online eller ring til salonen.",
 });
 
 const memberships = [

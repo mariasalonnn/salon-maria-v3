@@ -1,14 +1,16 @@
 import { ServicePage } from "../modules/ServicePage";
-import { prices } from "../data/prices";
+import { formatPrice, lowestMatchingPrice, prices } from "../data/prices";
 import { pageMetadata } from "../data/site";
 
 const path = "/boerneklip";
+const childFrom = formatPrice(
+  lowestMatchingPrice("Klip", (item) => /^(Børn|Drenge|Pige)/.test(item.name))
+);
 
 export const metadata = pageMetadata({
   path,
-  title: "Børneklip i København NV | Salon Maria",
-  description:
-    "Børnefrisør på Frederiksborgvej i København NV. Sjove stole, legetøj og tv under klipningen og en lille gave til sidst. Book børneklip hos Salon Maria.",
+  title: "Børneklip og børnefrisør i København NV | Salon Maria",
+  description: `Børnefrisør på Frederiksborgvej i København NV. Sjove stole, legetøj og tv under klipningen og en lille gave til sidst. Børneklip fra ${childFrom} kr. Book tid.`,
 });
 
 const childItems = prices
@@ -19,7 +21,7 @@ export default function Boerneklip() {
   return (
     <ServicePage
       path={path}
-      heading="Børneklip"
+      heading="Børneklip i København NV"
       intro="En tryg og sjov frisørtur for børn i en familievenlig salon i København NV."
       priceItems={childItems}
     >

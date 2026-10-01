@@ -63,7 +63,7 @@ const slides = [
           Siden 2014 – Københavns første børnefrisør med sin egen børnevenlige indretning. Vores salon er
           designet specielt til børn med inspiration fra engelske børnefrisører. Maria, en erfaren
           voksen- og børnefrisør, byder både børn og voksne velkommen i vores to forskellige
-          lokaler.
+          lokaler. Læs mere om <a href="/boerneklip" class="underline font-semibold">børneklip</a>.
         </p>
         <br>
         <p class="font-semibold">Børnevenlige omgivelser:</p>

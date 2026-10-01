@@ -9,6 +9,31 @@ export function formatPrice(price) {
   return price;
 }
 
+function amountOf(price) {
+  if (typeof price === "number") return price;
+  const digits = String(price).match(/\d+/);
+  return digits ? Number(digits[0]) : null;
+}
+
+export function priceByName(name) {
+  for (const category of prices) {
+    const item = category.items.find((entry) => entry.name === name);
+    if (!item) continue;
+    const value = amountOf(item.price);
+    if (value != null) return value;
+  }
+  throw new Error(`Missing price: ${name}`);
+}
+
+export function lowestMatchingPrice(categoryTitle, predicate) {
+  const category = prices.find((entry) => entry.title === categoryTitle);
+  const values = category.items
+    .filter(predicate)
+    .map((item) => amountOf(item.price))
+    .filter((value) => value != null);
+  return Math.min(...values);
+}
+
 export const prices = [
   {
     title: "Klip",

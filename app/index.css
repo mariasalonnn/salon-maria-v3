@@ -41,8 +41,8 @@ main {
 .button-text::after {
   content: "";
   position: absolute;
-  bottom: 12px;
-  left: 0;
+  bottom: 4px;
+  left: 1rem;
   right: 1rem;
   height: 2px;
   background-color: #e44c1d;

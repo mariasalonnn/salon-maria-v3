@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ServicePage } from "../modules/ServicePage";
+import { extraChildrenDiscountText } from "../data/birthday";
 import { pageMetadata, phone } from "../data/site";
 
 const path = "/boernefoedselsdag";
@@ -51,7 +52,7 @@ export default function Boernefoedselsdag() {
         { name: "10 børn", price: 3995 },
         { name: "Ekstra barn", price: 350 },
       ]}
-      priceNote="Gratis kørsel op til 10 km fra salonen. Længere afstand aftales. Depositum på 1.000 kr. ved booking trækkes fra prisen."
+      priceNote={`${extraChildrenDiscountText} Gratis kørsel op til 10 km fra salonen. Længere afstand aftales. Depositum på 1.000 kr. ved booking trækkes fra prisen.`}
       primaryAction={{ href: `tel:${phone}`, label: "Ring og book fest" }}
       secondaryAction={null}
       showMembership={false}
@@ -73,7 +74,8 @@ export default function Boernefoedselsdag() {
         <li>et gruppebillede taget med et Polaroid-kamera, ét print til hvert barn</li>
       </ul>
       <p>
-        Prisen er 3.995 kr. for 10 børn og 350 kr. for hvert ekstra barn. Kørsel er gratis op til 10
+        Prisen er 3.995 kr. for 10 børn og 350 kr. for hvert ekstra barn. {extraChildrenDiscountText}{" "}
+        Kørsel er gratis op til 10
         km fra salonen på Frederiksborgvej 202, 2400 København NV. Længere afstand aftaler vi, og der
         kan komme et ekstra transportgebyr.
       </p>

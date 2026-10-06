@@ -151,6 +151,9 @@ const products = [
         <p>
         Wella Professionals er en serie af fantastiske hårplejeprodukter, der bringer håret tilbage i sin naturlige balance. Wella Professionals består af forskellige underserier, der matcher alle hårtyper og behov.
         </p>
+        <p>
+        <a href="/produkter#wella-ultimate-repair" class="underline font-semibold">Se priser på Wella-produkter</a>
+        </p>
       `,
     image: "/wella.webp",
     alt: "Wella Professionals",
@@ -162,6 +165,9 @@ const products = [
         </h2>
         <p>
         Moroccanoil Treatment er mærkets signaturprodukt og har i mere end et årti været det perfekte fundament for hår hos millionvis af mennesker over hele verden.
+        </p>
+        <p>
+        <a href="/produkter#moroccanoil" class="underline font-semibold">Se priser på Moroccanoil</a>
         </p>
       `,
     image: "/moroccanoil.webp",

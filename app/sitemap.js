@@ -13,6 +13,11 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/produkter`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/abonnement`,
       changeFrequency: "monthly",
       priority: 0.8,

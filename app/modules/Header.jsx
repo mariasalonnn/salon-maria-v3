@@ -17,9 +17,9 @@ export function Header() {
 
 function DesktopHeader() {
   return (
-    <header className="hidden md:block h-14 sticky top-0 z-20 bg-grey p-2 md:px-6 text-white">
+    <header className="hidden lg:block h-14 sticky top-0 z-20 bg-grey p-2 md:px-6 text-white">
       <nav className="max-w-screen-xl flex w-full justify-between items-center mx-auto">
-        <Link href="/">
+        <Link href="/" className="shrink-0">
           <Image
             src="/logo.webp"
             width={533}
@@ -40,7 +40,7 @@ function MobileHeader() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <header className="md:hidden h-14 sticky top-0 z-30 bg-grey py-2 px-4 md:px-6 text-white">
+      <header className="lg:hidden h-14 sticky top-0 z-30 bg-grey py-2 px-4 md:px-6 text-white">
         <nav className="max-w-screen-xl flex w-full justify-between items-center mx-auto">
           <Link href="/">
             <Image
@@ -103,7 +103,7 @@ function MobileNavigationMenu({ setIsOpen }) {
   }, []);
 
   return (
-    <nav className="md:hidden bg-grey px-4 pt-20 pb-10 text-white fixed inset-0 z-20 flex flex-col gap-6 text-3xl items-center overflow-y-auto">
+    <nav className="lg:hidden bg-grey px-4 pt-20 pb-10 text-white fixed inset-0 z-20 flex flex-col gap-6 text-3xl items-center overflow-y-auto">
       <Link
         onClick={() => setIsOpen(false)}
         href="/boernefoedselsdag"
@@ -116,6 +116,9 @@ function MobileNavigationMenu({ setIsOpen }) {
       </Link>
       <Link onClick={() => setIsOpen(false)} href="/#priser">
         Priser
+      </Link>
+      <Link onClick={() => setIsOpen(false)} href="/produkter">
+        Produkter
       </Link>
       <Link onClick={() => setIsOpen(false)} href="/galleri">
         Galleri

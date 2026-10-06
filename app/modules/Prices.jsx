@@ -27,6 +27,11 @@ export function Prices() {
               Salon Maria Club – se abonnementer
             </Link>
           </p>
+          <p>
+            <Link href="/produkter" className="underline font-semibold">
+              Hårprodukter til salg
+            </Link>
+          </p>
           <Button asChild variant="outline" className="border-black text-black">
             <Link href="https://salon-maria.planway.com/">Book tid</Link>
           </Button>

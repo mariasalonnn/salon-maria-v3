@@ -15,7 +15,7 @@ import {
 export function DesktopNavigationMenu() {
   return (
     <NavigationMenu>
-      <NavigationMenuList className="gap-3 space-x-0">
+      <NavigationMenuList className="gap-2 space-x-0 xl:gap-3">
         <NavigationMenuItem>
           <Link
             href="/boernefoedselsdag"
@@ -50,6 +50,9 @@ export function DesktopNavigationMenu() {
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden sm:block">
           <Link href="/#priser">Priser</Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem className="hidden sm:block">
+          <Link href="/produkter">Produkter</Link>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden sm:block">
           <Link href="/galleri">Galleri</Link>

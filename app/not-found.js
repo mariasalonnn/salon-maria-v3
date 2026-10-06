@@ -20,6 +20,9 @@ export default function NotFound() {
           <Link href="/#priser" className="underline font-semibold">
             Priser
           </Link>
+          <Link href="/produkter" className="underline font-semibold">
+            Produkter
+          </Link>
           <Link href="https://salon-maria.planway.com/" className="underline font-semibold">
             Book tid
           </Link>

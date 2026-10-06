@@ -3,17 +3,20 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { productBrands } from "@/app/data/products";
 import { formatPrice } from "@/app/data/prices";
-import { pageMetadata, phone, phoneDisplay } from "@/app/data/site";
+import { pageMetadata } from "@/app/data/site";
 
 const path = "/produkter";
 const instagramUrl = "https://www.instagram.com/salonmaria.info/";
 const facebookUrl = "https://www.facebook.com/salonmaria.info";
+const orderPhone = "+4593106018";
+const orderPhoneDisplay = "+45 93 10 60 18";
+const mobilePayNumber = "59529";
 
 export const metadata = pageMetadata({
   path,
   title: "Hårprodukter – Moroccanoil og Wella | Salon Maria",
   description:
-    "Se priser på Moroccanoil og Wella hårpleje hos Salon Maria i København NV. Bestil på telefon eller besked og betal med MobilePay, eller køb produkterne i salonen.",
+    "Bestil Moroccanoil og Wella hos Salon Maria i København NV. Ring eller skriv til 93 10 60 18, og betal med MobilePay til 59529. Fri fragt ved køb over 500 kr.",
 });
 
 function catalogJsonLd() {
@@ -81,15 +84,24 @@ function Intro() {
         <div className="bg-white text-black rounded-md border-t-4 border-red p-6 md:p-8 flex flex-col gap-4">
           <h2 className="text-3xl sm:text-4xl font-bold font-serif">Sådan bestiller du</h2>
           <p className="text-base md:text-lg max-w-3xl">
-            Der er ingen kortbetaling her på siden. Ring eller skriv, så lægger vi produktet til
-            side. Du betaler med MobilePay – eller du køber det direkte i salonen.
+            Der er ingen kortbetaling her på siden. Ring eller skriv til{" "}
+            <a href={`tel:${orderPhone}`} className="underline font-semibold">
+              {orderPhoneDisplay}
+            </a>
+            , så lægger vi produktet til side. Du kan også købe det direkte i salonen.
           </p>
+          <div className="rounded-md border-2 border-red px-4 py-3 flex flex-col gap-1 max-w-3xl">
+            <p className="text-base md:text-lg font-semibold">
+              Betal med MobilePay til {mobilePayNumber}.
+            </p>
+            <p className="text-base md:text-lg font-semibold">Fri fragt ved køb over 500 kr.</p>
+          </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <Button asChild className="w-full sm:w-auto">
-              <a href={`tel:${phone}`}>Ring {phoneDisplay}</a>
+              <a href={`tel:${orderPhone}`}>Ring {orderPhoneDisplay}</a>
             </Button>
             <Button asChild variant="outline" className="border-black text-black w-full sm:w-auto">
-              <a href={`sms:${phone}`}>Send en sms</a>
+              <a href={`sms:${orderPhone}`}>Send sms til {orderPhoneDisplay}</a>
             </Button>
           </div>
           <p>
@@ -155,15 +167,18 @@ function Catalog() {
         <div className="rounded-md border-t-4 border-red bg-neutral-50 p-6 flex flex-col gap-3">
           <h2 className="text-2xl sm:text-3xl font-bold font-serif">Klar til at bestille?</h2>
           <p className="max-w-3xl">
-            Ring{" "}
-            <a href={`tel:${phone}`} className="underline font-semibold">
-              {phoneDisplay}
+            Ring eller skriv til{" "}
+            <a href={`tel:${orderPhone}`} className="underline font-semibold">
+              {orderPhoneDisplay}
             </a>
-            , send en{" "}
-            <a href={`sms:${phone}`} className="underline font-semibold">
-              sms
-            </a>{" "}
-            eller skriv på{" "}
+            , eller køb produkterne i salonen. Betal med MobilePay til {mobilePayNumber}. Fri fragt
+            ved køb over 500 kr.
+          </p>
+          <p className="max-w-3xl">
+            <a href={`sms:${orderPhone}`} className="underline font-semibold">
+              Send en sms til {orderPhoneDisplay}
+            </a>
+            , eller skriv på{" "}
             <a
               href={instagramUrl}
               target="_blank"
@@ -181,7 +196,7 @@ function Catalog() {
             >
               Facebook
             </a>
-            . Betal med MobilePay, eller køb produkterne i salonen.
+            .
           </p>
         </div>
       </div>

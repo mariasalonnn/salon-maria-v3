@@ -4,10 +4,10 @@ export const phone = "+4539561666";
 export const phoneDisplay = "+45 39 56 16 66";
 
 export const shareImage = {
-  url: "/og-salon-maria.jpg",
+  url: "/og-salon-maria-logo.jpg",
   width: 1200,
   height: 630,
-  alt: "Salon Maria, frisør på Frederiksborgvej 202 i København NV",
+  alt: "Salon Maria logo",
 };
 
 export const servicePages = [
